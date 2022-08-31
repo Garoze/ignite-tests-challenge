@@ -63,9 +63,8 @@ describe("CreateStatement", () => {
         Authorization: `Bearer ${authResponse.body.token}`
       })
     
-    console.log(response.body);
-    // expect(response.body).toHaveProperty("balance");
-    // expect(response.body.balance).toEqual(400);
+    expect(response.body).toHaveProperty("balance");
+    expect(response.body.balance).toEqual(400);
   })
 
   it("should not be able to view a balance of an invalid user", async () => {

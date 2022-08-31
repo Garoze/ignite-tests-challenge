@@ -119,7 +119,8 @@ describe("CreateStatement", () => {
         Authorization: `Bearer ${authResponse.body.token}`
       })
 
-    console.log(response.body);
+    expect(response.body).toHaveProperty("message");
+    expect(response.body.message).toEqual("Insufficient funds");
   })
 })
 
