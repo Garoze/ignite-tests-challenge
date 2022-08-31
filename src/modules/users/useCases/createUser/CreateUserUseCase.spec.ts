@@ -1,5 +1,5 @@
-import { AppError } from "../../../../shared/errors/AppError";
 import { InMemoryUsersRepository } from "../../repositories/in-memory/InMemoryUsersRepository";
+import { CreateUserError } from "./CreateUserError";
 import { CreateUserUseCase } from "./CreateUserUseCase"
 import { ICreateUserDTO } from "./ICreateUserDTO";
 
@@ -37,6 +37,6 @@ describe("CreateUserUseCase", () => {
         email: "test@email.com",
         password: "otherpass"
       })
-    }).rejects.toBeInstanceOf(AppError);
+    }).rejects.toBeInstanceOf(CreateUserError);
   })
 })
